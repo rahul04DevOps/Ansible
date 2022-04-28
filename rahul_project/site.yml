@@ -1,0 +1,10 @@
+---
+- name: Printing package and service name
+  hosts: web
+  tasks:
+    - name: print package name - {{web_package}}
+      debug:
+         msg: "this is the {{web_package}} package"
+    - name: print service name - {{web_service}}
+      debug:
+         msg: "this is the {{web_service}} service"

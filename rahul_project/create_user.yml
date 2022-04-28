@@ -1,0 +1,10 @@
+---
+- name: create a user with  encrypted credintials
+  hosts: managednode1
+  vars_files:
+       - secret.yml
+  tasks:
+    - name: create a user with user module
+      user:
+        name: "{{ username }}"
+        password: "{{ pwhash }}"

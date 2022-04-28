@@ -1,0 +1,7 @@
+---
+# from ansible-galaxy
+- src: geerlingguy.docker
+  
+- src: geerlingguy.nginx
+  version: 2.7.0
+  name: nginx

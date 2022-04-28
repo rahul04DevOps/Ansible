@@ -1,0 +1,11 @@
+---
+- name: test register
+  hosts: managednode1
+  tasks:
+    - name: check user lisa is there or not
+      shell: cat /etc/passwd
+      register: passwd_contents
+    - name: print contents
+      debug:
+        msg: echo "passwd contains user lisa"
+      when: passwd_contents.stdout.find('lisa') != -1

@@ -1,0 +1,16 @@
+---
+- name: simple block example
+  hosts: all
+  tasks:
+    - name: setting up http
+      block:
+        - name: installing http
+          yum :
+            name: httpd
+            state: present
+        - name: restarting http
+          service:
+            name: httpd
+            state: started
+      when: ansible_distribution == "RedHat"
+            

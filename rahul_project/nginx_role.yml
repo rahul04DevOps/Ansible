@@ -1,0 +1,7 @@
+---
+- name: use galaxy nginx role
+  hosts: managednode1
+  user: ansibleuser
+  become: true
+  roles:
+    - role: geerlingguy.nginx
